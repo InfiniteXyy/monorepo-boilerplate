@@ -1,0 +1,19 @@
+{
+  "name": "@repo/service-core",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@orpc/server": "catalog:",
+    "@repo/shared-contracts": "workspace:"
+  },
+  "devDependencies": {
+    "@repo/config-eslint": "workspace:",
+    "@repo/config-typescript": "workspace:"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  // due to some bugs, we need to specify the working directories if we want to use typescript for eslint config
+  "eslint.workingDirectories": [
+    { "directory": "./apps/service-posts" },
+    { "directory": "./apps/web" },
+    { "directory": "./packages/config-eslint" },
+    { "directory": "./packages/service-core" },
+    { "directory": "./packages/shared-contracts" }
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  }
+}

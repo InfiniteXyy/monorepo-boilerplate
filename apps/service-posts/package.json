@@ -1,0 +1,19 @@
+{
+  "name": "service-posts",
+  "type": "module",
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "dev": "tsx --watch src/index.ts",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "@orpc/server": "catalog:",
+    "@repo/service-core": "workspace:",
+    "@repo/shared-contracts": "workspace:",
+    "@repo/utils": "workspace:"
+  },
+  "devDependencies": {
+    "@repo/config-eslint": "workspace:",
+    "@repo/config-typescript": "workspace:"
+  }
+}

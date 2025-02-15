@@ -1,0 +1,12 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+
+catalog:
+  '@orpc/client': ^0.39.0
+  '@orpc/contract': ^0.39.0
+  '@orpc/server': ^0.39.0
+  '@orpc/react-query': ^0.39.0
+  eslint: ^9.20.1
+  vite: ^6.1.0
+  zod: ^3.24.2
