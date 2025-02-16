@@ -6,7 +6,8 @@
   },
   "scripts": {
     "check-types": "tsc --noEmit",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "vitest run --silent"
   },
   "dependencies": {
     "@orpc/server": "catalog:",
@@ -14,6 +15,8 @@
   },
   "devDependencies": {
     "@repo/config-eslint": "workspace:",
-    "@repo/config-typescript": "workspace:"
+    "@repo/config-typescript": "workspace:",
+    "eslint": "catalog:",
+    "vitest": "catalog:"
   }
 }

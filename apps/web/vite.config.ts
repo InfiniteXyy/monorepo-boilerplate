@@ -9,4 +9,9 @@ export default defineConfig({
       '/rpc/posts': 'http://localhost:3000',
     },
   },
+  test: {
+    setupFiles: ['./src/setupTest.ts'],
+    environment: 'jsdom',
+    globals: true, // for testing library auto cleanup https://testing-library.com/docs/react-testing-library/setup#auto-cleanup-in-vitest
+  },
 });

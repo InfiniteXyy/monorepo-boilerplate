@@ -9,4 +9,5 @@ catalog:
   '@orpc/react-query': ^0.39.0
   eslint: ^9.20.1
   vite: ^6.1.0
+  vitest: ^3.0.5
   zod: ^3.24.2

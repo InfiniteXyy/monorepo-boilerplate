@@ -6,11 +6,13 @@
   },
   "scripts": {
     "check-types": "tsc --noEmit",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "vitest run --silent"
   },
   "devDependencies": {
     "@repo/config-eslint": "workspace:",
     "@repo/config-typescript": "workspace:",
-    "eslint": "catalog:"
+    "eslint": "catalog:",
+    "vitest": "catalog:"
   }
 }

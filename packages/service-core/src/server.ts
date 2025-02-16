@@ -15,7 +15,7 @@ export function startServer(props: { router: Router<Context, any>; port: number;
       const { matched } = await rpcHandler.handle(req, res, { prefix });
       if (matched) return;
       // eslint-disable-next-line no-console
-      else console.log('No route matched for', req);
+      else console.log('No route matched for', req.url);
     }
 
     res.statusCode = 404;

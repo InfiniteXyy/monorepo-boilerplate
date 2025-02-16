@@ -3,7 +3,7 @@ import { contracts } from '@repo/shared-contracts';
 
 const { base, authed } = createProcedures(contracts.posts);
 
-const database = {
+export const database = {
   posts: [{ id: '0', title: 'initialPost', description: 'description' }] as {
     id: string;
     title: string;

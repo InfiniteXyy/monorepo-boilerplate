@@ -42,9 +42,9 @@ A modern monorepo boilerplate that supports:
 
 ## 🎯 Upcoming Features
 
-- [ ] Vitest integration
+- [x] Vitest integration
 - [ ] Dockerfile for each app with root-level build support
-- [ ] GitHub actions for test and deploy
+- [x] GitHub actions for test
 - [ ] Additional service examples
 - [ ] Authentication API examples
 - [ ] Custom ESLint rule examples

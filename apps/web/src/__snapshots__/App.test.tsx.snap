@@ -1,0 +1,153 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App > renders correctly 1`] = `
+<div>
+  <div
+    class="min-h-screen bg-gray-50"
+  >
+    <div
+      class="container mx-auto px-4 py-8"
+    >
+      <div
+        class="grid grid-cols-1 gap-8 md:grid-cols-2"
+      >
+        <div>
+          <div
+            class="rounded-lg border bg-white p-6 shadow-sm"
+          >
+            <h1
+              class="mb-6 text-2xl font-bold"
+            >
+              Create Post
+            </h1>
+            <form
+              class="space-y-4"
+            >
+              <div>
+                <input
+                  class="w-full rounded-lg border p-2 outline-none focus:border-blue-500"
+                  name="title"
+                  placeholder="Title"
+                />
+              </div>
+              <div>
+                <textarea
+                  class="w-full rounded-lg border p-2 outline-none focus:border-blue-500"
+                  name="description"
+                  placeholder="Description"
+                  rows="4"
+                />
+              </div>
+              <button
+                class="rounded-lg bg-blue-500 px-4 py-2 text-white transition-colors hover:bg-blue-600"
+                type="submit"
+              >
+                Create Post
+              </button>
+            </form>
+          </div>
+          <div
+            class="mt-8"
+          >
+            <h2
+              class="mb-4 text-xl font-semibold"
+            >
+              Posts
+            </h2>
+            <ul
+              class="space-y-2"
+            >
+              <li
+                class="cursor-pointer rounded-lg border p-3 shadow-sm transition-colors bg-white hover:bg-blue-50"
+              >
+                Test Post 1
+              </li>
+              <li
+                class="cursor-pointer rounded-lg border p-3 shadow-sm transition-colors bg-white hover:bg-blue-50"
+              >
+                Test Post 2
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`app > renders correctly 1`] = `
+<div>
+  <div
+    class="min-h-screen bg-gray-50"
+  >
+    <div
+      class="container mx-auto px-4 py-8"
+    >
+      <div
+        class="grid grid-cols-1 gap-8 md:grid-cols-2"
+      >
+        <div>
+          <div
+            class="rounded-lg border bg-white p-6 shadow-sm"
+          >
+            <h1
+              class="mb-6 text-2xl font-bold"
+            >
+              Create Post
+            </h1>
+            <form
+              class="space-y-4"
+            >
+              <div>
+                <input
+                  class="w-full rounded-lg border p-2 outline-none focus:border-blue-500"
+                  name="title"
+                  placeholder="Title"
+                />
+              </div>
+              <div>
+                <textarea
+                  class="w-full rounded-lg border p-2 outline-none focus:border-blue-500"
+                  name="description"
+                  placeholder="Description"
+                  rows="4"
+                />
+              </div>
+              <button
+                class="rounded-lg bg-blue-500 px-4 py-2 text-white transition-colors hover:bg-blue-600"
+                type="submit"
+              >
+                Create Post
+              </button>
+            </form>
+          </div>
+          <div
+            class="mt-8"
+          >
+            <h2
+              class="mb-4 text-xl font-semibold"
+            >
+              Posts
+            </h2>
+            <ul
+              class="space-y-2"
+            >
+              <li
+                class="cursor-pointer rounded-lg border p-3 shadow-sm transition-colors bg-white hover:bg-blue-50"
+              >
+                Test Post 1
+              </li>
+              <li
+                class="cursor-pointer rounded-lg border p-3 shadow-sm transition-colors bg-white hover:bg-blue-50"
+              >
+                Test Post 2
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
