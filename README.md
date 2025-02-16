@@ -50,7 +50,8 @@ A modern monorepo boilerplate that supports:
 - [ ] Authentication API examples
 - [x] Custom ESLint rule examples
 - [ ] Micro frontend examples
-- [ ] e2e tests
+- [x] e2e tests
+- [ ] storybook for ui sub components
 
 ## 🛠️ Getting Started
 

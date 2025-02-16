@@ -1,6 +1,7 @@
 {
   // due to some bugs, we need to specify the working directories if we want to use typescript for eslint config
   "eslint.workingDirectories": [
+    { "directory": "./apps/e2e" },
     { "directory": "./apps/service-posts" },
     { "directory": "./apps/web" },
     { "directory": "./packages/config-eslint" },
