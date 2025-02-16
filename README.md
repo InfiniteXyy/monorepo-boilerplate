@@ -48,8 +48,9 @@ A modern monorepo boilerplate that supports:
 - [x] GitHub actions for test
 - [ ] Additional service examples
 - [ ] Authentication API examples
-- [ ] Custom ESLint rule examples
+- [x] Custom ESLint rule examples
 - [ ] Micro frontend examples
+- [ ] e2e tests
 
 ## 🛠️ Getting Started
 
