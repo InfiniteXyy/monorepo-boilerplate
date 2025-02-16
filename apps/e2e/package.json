@@ -2,7 +2,7 @@
   "name": "e2e",
   "scripts": {
     "start:ui": "playwright test --ui",
-    "start": "playwright test",
+    "start": "playwright install --with-deps && playwright test",
     "lint": "eslint tests",
     "check-types": "tsc --noEmit"
   },
