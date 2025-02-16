@@ -2,9 +2,9 @@
   "name": "service-posts",
   "type": "module",
   "scripts": {
-    "check-types": "tsc --noEmit",
-    "start": "tsx src/index.ts",
+    "build": "tsup",
     "dev": "tsx --watch src/index.ts",
+    "check-types": "tsc --noEmit",
     "lint": "eslint src",
     "test": "vitest run --silent"
   },
@@ -18,6 +18,7 @@
     "@repo/config-eslint": "workspace:",
     "@repo/config-typescript": "workspace:",
     "eslint": "catalog:",
+    "tsup": "catalog:",
     "vitest": "catalog:"
   }
 }

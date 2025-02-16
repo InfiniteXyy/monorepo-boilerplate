@@ -1,5 +1,5 @@
 # extends from https://github.com/vercel/turborepo/blob/main/examples/with-docker/apps/web/Dockerfile
-FROM node:20-slim AS base
+FROM node:20-alpine AS base
 
 FROM base AS builder
 WORKDIR /app
