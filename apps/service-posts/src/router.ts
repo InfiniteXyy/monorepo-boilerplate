@@ -28,4 +28,12 @@ export const postsRouter = base.router({
     database.posts.push(newPost);
     return newPost;
   }),
+  deletePost: authed.deletePost.handler(async ({ input }) => {
+    const index = database.posts.findIndex((post) => post.id === input.id);
+    if (index === -1) {
+      throw new Error('Post not found');
+    }
+    const deletedPost = database.posts.splice(index, 1)[0];
+    return { id: deletedPost!.id };
+  }),
 });

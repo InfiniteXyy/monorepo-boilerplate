@@ -46,6 +46,7 @@ A modern monorepo boilerplate that supports:
 - [x] Dockerfile for each app with root-level build support
 - [x] Make docker image smaller by building the service to js
 - [x] GitHub actions for test
+- [ ] database support
 - [ ] Additional service examples
 - [ ] Authentication API examples
 - [x] Custom ESLint rule examples

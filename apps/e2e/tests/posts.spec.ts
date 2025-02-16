@@ -26,4 +26,8 @@ test('should Create post work', async ({ page }) => {
   // After click on the title item, should see the description then
   await page.getByText(fakePost.title).click();
   await expect(page.getByText(fakePost.description)).toBeVisible();
+
+  // cleanup by delete the new created posts
+  await page.getByRole('button', { name: `Delete ${fakePost.title}` }).click();
+  await expect(page.getByText(fakePost.title)).not.toBeVisible();
 });
