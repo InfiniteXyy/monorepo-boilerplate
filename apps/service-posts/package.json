@@ -3,6 +3,7 @@
   "type": "module",
   "scripts": {
     "check-types": "tsc --noEmit",
+    "start": "tsx src/index.ts",
     "dev": "tsx --watch src/index.ts",
     "lint": "eslint src",
     "test": "vitest run --silent"

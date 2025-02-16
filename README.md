@@ -43,7 +43,8 @@ A modern monorepo boilerplate that supports:
 ## 🎯 Upcoming Features
 
 - [x] Vitest integration
-- [ ] Dockerfile for each app with root-level build support
+- [x] Dockerfile for each app with root-level build support
+- [ ] Make docker image smaller by building the service to js
 - [x] GitHub actions for test
 - [ ] Additional service examples
 - [ ] Authentication API examples
@@ -55,6 +56,12 @@ A modern monorepo boilerplate that supports:
 ```sh
 pnpm i
 pnpm run dev
+```
+
+or build a docker image
+
+```sh
+docker-compose up
 ```
 
 ## 📝 License

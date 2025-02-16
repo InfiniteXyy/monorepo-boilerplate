@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  web:
+    container_name: web
+    build:
+      context: .
+      dockerfile: ./apps/web/Dockerfile
+    restart: always
+    ports:
+      - 8080:80
+    networks:
+      - app_network
+  service-posts:
+    container_name: service-posts
+    build:
+      context: .
+      dockerfile: ./apps/service-posts/Dockerfile
+    restart: always
+    # the 3000 port is only available to the app_network services
+    # ports:
+    #   - 3000:3000
+    networks:
+      - app_network
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  app_network:
