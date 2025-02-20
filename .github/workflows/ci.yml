@@ -11,44 +11,34 @@ on:
       - main
 
 jobs:
-  lint:
+  linting-testing:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
           run_install: false
-      - uses: actions/setup-node@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
         with:
           node-version: lts/*
           cache: pnpm
 
-      - run: pnpm i -g @antfu/ni
-      - run: nci
-      - run: nr lint
-      - run: nr check-types
-
-  test:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        node: [lts/*]
-        os: [ubuntu-latest, windows-latest, macos-latest]
-      fail-fast: false
-
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - name: Cache Turborepo
+        uses: actions/cache@v4
         with:
-          run_install: false
-      - name: Set node ${{ matrix.node }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node }}
-          cache: pnpm
+          path: .turbo
+          key: turbo-${{ runner.os }}-${{ github.ref_name }}
+          restore-keys: |
+            turbo-${{ runner.os }}-main
+            turbo-${{ runner.os }}
 
-      - run: pnpm i -g @antfu/ni
-      - run: nci
-      - run: nr build
-      - run: nr test
+      - run: pnpm install
+      - run: pnpm run lint
+      - run: pnpm run check-types
+      - run: pnpm run build
+      - run: pnpm run test
