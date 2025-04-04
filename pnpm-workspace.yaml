@@ -3,12 +3,12 @@ packages:
   - 'packages/*'
 
 catalog:
-  '@orpc/client': ^0.39.0
-  '@orpc/contract': ^0.39.0
-  '@orpc/server': ^0.39.0
-  '@orpc/react-query': ^0.39.0
-  eslint: ^9.20.1
-  tsup: ^8.3.6
-  vite: ^6.1.0
-  vitest: ^3.0.5
+  '@orpc/client': ^1.0.0-beta.5
+  '@orpc/contract': ^1.0.0-beta.5
+  '@orpc/server': ^1.0.0-beta.5
+  '@orpc/react-query': ^1.0.0-beta.5
+  eslint: ^9.23.0
+  tsup: ^8.4.0
+  vite: ^6.2.5
+  vitest: ^3.1.1
   zod: ^3.24.2

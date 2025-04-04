@@ -29,5 +29,6 @@ test('should Create post work', async ({ page }) => {
 
   // cleanup by delete the new created posts
   await page.getByRole('button', { name: `Delete ${fakePost.title}` }).click();
+  await page.waitForTimeout(500); // Add a small delay
   await expect(page.getByText(fakePost.title)).not.toBeVisible();
 });

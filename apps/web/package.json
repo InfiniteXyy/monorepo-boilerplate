@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@orpc/client": "catalog:",
+    "@orpc/contract": "catalog:",
     "@orpc/react-query": "catalog:",
     "@repo/shared-contracts": "workspace:^",
     "@repo/utils": "workspace:^",
