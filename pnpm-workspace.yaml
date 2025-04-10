@@ -7,7 +7,9 @@ catalog:
   '@orpc/contract': ^1.0.0-beta.5
   '@orpc/server': ^1.0.0-beta.5
   '@orpc/react-query': ^1.0.0-beta.5
+  '@tailwindcss/vite': ^4.0.6
   eslint: ^9.23.0
+  tailwindcss: ^4.0.6
   tsup: ^8.4.0
   vite: ^6.2.5
   vitest: ^3.1.1

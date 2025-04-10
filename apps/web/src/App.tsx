@@ -1,3 +1,4 @@
+import { Button } from '@repo/ui-components';
 import { useState } from 'react';
 import { useDeletePost } from './api/useDeletePost';
 import { useListPosts } from './api/useListPosts';
@@ -25,9 +26,9 @@ export function App() {
                     className={`flex items-center cursor-pointer rounded-lg border p-3 shadow-sm transition-colors ${post.id === currentPostId ? 'bg-blue-100' : 'bg-white hover:bg-blue-50'}`}
                   >
                     {post.title}
-                    <button
-                      className="h-7 w-7 text-sm rounded-full hover:bg-gray-200 cursor-pointer ml-auto"
-                      type="button"
+                    <Button
+                      variant="secondary"
+                      className="h-7 w-7 text-sm rounded-full ml-auto p-0 flex items-center justify-center"
                       aria-label={`Delete ${post.title}`}
                       onClick={async (e) => {
                         e.stopPropagation();
@@ -36,7 +37,7 @@ export function App() {
                       }}
                     >
                       ❌
-                    </button>
+                    </Button>
                   </li>
                 ))}
               </ul>

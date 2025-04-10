@@ -1,37 +1,30 @@
 {
-  "name": "web",
+  "name": "@repo/ui-components",
   "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles.css": "./src/styles.css"
+  },
   "scripts": {
     "check-types": "tsc --noEmit",
-    "build": "vite build",
-    "dev": "vite",
     "lint": "eslint src",
     "test": "vitest run --silent"
   },
   "dependencies": {
-    "@orpc/client": "catalog:",
-    "@orpc/contract": "catalog:",
-    "@orpc/react-query": "catalog:",
-    "@repo/shared-contracts": "workspace:^",
-    "@repo/ui-components": "workspace:^",
-    "@repo/utils": "workspace:^",
-    "@tanstack/react-query": "^5.66.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@repo/config-eslint": "workspace:",
     "@repo/config-typescript": "workspace:",
-    "@tailwindcss/vite": "catalog:",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "catalog:",
     "jsdom": "^26.0.0",
-    "tailwindcss": "catalog:",
-    "vite": "catalog:",
+    "tailwindcss": "^4.0.6",
     "vitest": "catalog:"
   }
 }

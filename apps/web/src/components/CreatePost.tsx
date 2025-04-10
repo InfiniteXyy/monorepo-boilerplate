@@ -1,11 +1,12 @@
+import { Button, Card, CardTitle, Input, TextArea } from '@repo/ui-components';
 import { useCreatePost } from '../api/useCreatePost';
 
 export function CreatePost() {
   const { mutateAsync } = useCreatePost();
 
   return (
-    <div className="rounded-lg border bg-white p-6 shadow-sm">
-      <h1 className="mb-6 text-2xl font-bold">Create Post</h1>
+    <Card>
+      <CardTitle className="mb-6">Create Post</CardTitle>
       <form
         className="space-y-4"
         onSubmit={async (e) => {
@@ -18,27 +19,13 @@ export function CreatePost() {
         }}
       >
         <div>
-          <input
-            name="title"
-            placeholder="Title"
-            className="w-full rounded-lg border p-2 outline-none focus:border-blue-500"
-          />
+          <Input name="title" placeholder="Title" />
         </div>
         <div>
-          <textarea
-            name="description"
-            placeholder="Description"
-            rows={4}
-            className="w-full rounded-lg border p-2 outline-none focus:border-blue-500"
-          />
+          <TextArea name="description" placeholder="Description" rows={4} />
         </div>
-        <button
-          type="submit"
-          className="rounded-lg bg-blue-500 px-4 py-2 text-white transition-colors hover:bg-blue-600"
-        >
-          Create Post
-        </button>
+        <Button type="submit">Create Post</Button>
       </form>
-    </div>
+    </Card>
   );
 }

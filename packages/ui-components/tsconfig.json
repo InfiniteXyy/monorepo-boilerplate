@@ -1,0 +1,4 @@
+{
+  "extends": "@repo/config-typescript/tsconfig.react.json",
+  "include": ["src"]
+}

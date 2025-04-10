@@ -7,7 +7,8 @@
     { "directory": "./packages/config-eslint" },
     { "directory": "./packages/service-core" },
     { "directory": "./packages/shared-contracts" },
-    { "directory": "./packages/utils" }
+    { "directory": "./packages/utils" },
+    { "directory": "./packages/ui-components" }
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
