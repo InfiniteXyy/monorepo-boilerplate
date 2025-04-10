@@ -62,16 +62,16 @@ test('should Edit post work', async ({ page }) => {
   };
 
   // Clear and fill the form fields
-  await page.getByRole('textbox', { name: 'Title' }).fill('');
-  await page.getByRole('textbox', { name: 'Title' }).fill(updatedPost.title);
-  await page.getByRole('textbox', { name: 'Description' }).fill('');
-  await page.getByRole('textbox', { name: 'Description' }).fill(updatedPost.description);
+  await page.getByRole('textbox', { name: 'Title' }).nth(1).fill('');
+  await page.getByRole('textbox', { name: 'Title' }).nth(1).fill(updatedPost.title);
+  await page.getByRole('textbox', { name: 'Description' }).nth(1).fill('');
+  await page.getByRole('textbox', { name: 'Description' }).nth(1).fill(updatedPost.description);
 
   // Save changes
   await page.getByRole('button', { name: 'Save Changes' }).click();
 
   // Verify the post was updated
-  await expect(page.getByText(updatedPost.title)).toBeVisible();
+  await expect(page.getByText(updatedPost.title).nth(0)).toBeVisible();
   await expect(page.getByText(updatedPost.description)).toBeVisible();
 
   // Cleanup by deleting the post
