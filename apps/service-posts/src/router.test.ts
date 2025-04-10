@@ -44,4 +44,35 @@ describe('postsRouter', () => {
       expect(allPosts).toHaveLength(2);
     });
   });
+
+  describe('updatePost', () => {
+    it('should update existing post', async () => {
+      const updatedData = {
+        id: '0',
+        title: 'Updated Title',
+        description: 'Updated description',
+      };
+
+      const result = await call(postsRouter.updatePost, updatedData, { context: { user: { id: '1' } } });
+
+      expect(result).toEqual(updatedData);
+
+      // Verify post was updated in database
+      const updatedPost = await call(postsRouter.getPost, { id: '0' });
+      expect(updatedPost.title).toBe(updatedData.title);
+      expect(updatedPost.description).toBe(updatedData.description);
+    });
+
+    it('should throw error when post not found', async () => {
+      const updatedData = {
+        id: 'nonexistent',
+        title: 'Updated Title',
+        description: 'Updated description',
+      };
+
+      await expect(call(postsRouter.updatePost, updatedData, { context: { user: { id: '1' } } })).rejects.toThrow(
+        'Post not found',
+      );
+    });
+  });
 });

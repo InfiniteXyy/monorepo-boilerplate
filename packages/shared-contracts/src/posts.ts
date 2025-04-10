@@ -12,5 +12,9 @@ export const posts = oc.router({
     .input(z.object({ title: z.string(), description: z.string() }))
     .output(z.object({ id: z.string(), title: z.string(), description: z.string() })),
 
+  updatePost: oc
+    .input(z.object({ id: z.string(), title: z.string(), description: z.string() }))
+    .output(z.object({ id: z.string(), title: z.string(), description: z.string() })),
+
   deletePost: oc.input(z.object({ id: z.string() })).output(z.object({ id: z.string() })),
 });

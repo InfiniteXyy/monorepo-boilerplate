@@ -13,10 +13,10 @@ exports[`app > renders correctly 1`] = `
       >
         <div>
           <div
-            class="rounded-lg border bg-white p-6 shadow-sm"
+            class="rounded-lg border bg-white p-6 shadow-sm "
           >
             <h1
-              class="mb-6 text-2xl font-bold"
+              class="mb-4 text-2xl font-bold mb-6"
             >
               Create Post
             </h1>
@@ -25,21 +25,21 @@ exports[`app > renders correctly 1`] = `
             >
               <div>
                 <input
-                  class="w-full rounded-lg border p-2 outline-none focus:border-blue-500"
+                  class="w-full rounded-lg border p-2 outline-none focus:border-blue-500 "
                   name="title"
                   placeholder="Title"
                 />
               </div>
               <div>
                 <textarea
-                  class="w-full rounded-lg border p-2 outline-none focus:border-blue-500"
+                  class="w-full rounded-lg border p-2 outline-none focus:border-blue-500 "
                   name="description"
                   placeholder="Description"
                   rows="4"
                 />
               </div>
               <button
-                class="rounded-lg bg-blue-500 px-4 py-2 text-white transition-colors hover:bg-blue-600"
+                class="rounded-lg px-4 py-2 text-white transition-colors bg-blue-500 hover:bg-blue-600 "
                 type="submit"
               >
                 Create Post
@@ -63,7 +63,7 @@ exports[`app > renders correctly 1`] = `
                 Test Post 1
                 <button
                   aria-label="Delete Test Post 1"
-                  class="h-7 w-7 text-sm rounded-full hover:bg-gray-200 cursor-pointer ml-auto"
+                  class="rounded-lg px-4 py-2 text-white transition-colors bg-gray-500 hover:bg-gray-600 h-7 w-7 text-sm rounded-full ml-auto p-0 flex items-center justify-center"
                   type="button"
                 >
                   ❌
@@ -75,7 +75,7 @@ exports[`app > renders correctly 1`] = `
                 Test Post 2
                 <button
                   aria-label="Delete Test Post 2"
-                  class="h-7 w-7 text-sm rounded-full hover:bg-gray-200 cursor-pointer ml-auto"
+                  class="rounded-lg px-4 py-2 text-white transition-colors bg-gray-500 hover:bg-gray-600 h-7 w-7 text-sm rounded-full ml-auto p-0 flex items-center justify-center"
                   type="button"
                 >
                   ❌

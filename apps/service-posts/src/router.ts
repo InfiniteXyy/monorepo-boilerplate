@@ -28,6 +28,15 @@ export const postsRouter = base.router({
     database.posts.push(newPost);
     return newPost;
   }),
+  updatePost: authed.updatePost.handler(async ({ input }) => {
+    const index = database.posts.findIndex((post) => post.id === input.id);
+    if (index === -1) {
+      throw new Error('Post not found');
+    }
+    const updatedPost = { ...database.posts[index], ...input };
+    database.posts[index] = updatedPost;
+    return updatedPost;
+  }),
   deletePost: authed.deletePost.handler(async ({ input }) => {
     const index = database.posts.findIndex((post) => post.id === input.id);
     if (index === -1) {
