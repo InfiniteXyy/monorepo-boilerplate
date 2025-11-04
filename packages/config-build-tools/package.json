@@ -1,0 +1,10 @@
+{
+  "name": "@repo/config-build-tools",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "vite": "catalog:"
+  }
+}

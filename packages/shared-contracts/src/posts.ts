@@ -10,7 +10,8 @@ export const posts = oc.router({
 
   createPost: oc
     .input(z.object({ title: z.string(), description: z.string() }))
-    .output(z.object({ id: z.string(), title: z.string(), description: z.string() })),
+    .output(z.object({ id: z.string(), title: z.string(), description: z.string() }))
+    .errors({ EXCEED_DAILY_LIMIT: { data: z.object({ resumeAt: z.date(), maxPostPerDay: z.number() }) } }),
 
   updatePost: oc
     .input(z.object({ id: z.string(), title: z.string(), description: z.string() }))

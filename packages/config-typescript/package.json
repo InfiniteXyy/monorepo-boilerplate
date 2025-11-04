@@ -1,7 +1,0 @@
-{
-  "name": "@repo/config-typescript",
-  "type": "module",
-  "publishConfig": {
-    "access": "public"
-  }
-}

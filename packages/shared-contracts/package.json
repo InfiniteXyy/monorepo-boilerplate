@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@repo/config-eslint": "workspace:",
-    "@repo/config-typescript": "workspace:",
+    "@repo/config-build-tools": "workspace:",
     "eslint": "catalog:"
   }
 }

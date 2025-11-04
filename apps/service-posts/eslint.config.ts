@@ -1,3 +1,3 @@
 import { base } from '@repo/config-eslint';
 
-export default base();
+export default base().removeRules('node/prefer-global/process');

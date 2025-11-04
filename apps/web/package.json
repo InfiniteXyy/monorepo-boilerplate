@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@repo/config-eslint": "workspace:",
-    "@repo/config-typescript": "workspace:",
+    "@repo/config-build-tools": "workspace:",
     "@tailwindcss/vite": "catalog:",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",

@@ -2,8 +2,8 @@
   "name": "service-posts",
   "type": "module",
   "scripts": {
-    "build": "tsup",
-    "dev": "tsx --watch src/index.ts",
+    "build": "vite build",
+    "dev": "vite",
     "check-types": "tsc --noEmit",
     "lint": "eslint src",
     "test": "vitest run --silent"
@@ -15,10 +15,10 @@
     "@repo/utils": "workspace:"
   },
   "devDependencies": {
+    "@repo/config-build-tools": "workspace:",
     "@repo/config-eslint": "workspace:",
-    "@repo/config-typescript": "workspace:",
     "eslint": "catalog:",
-    "tsup": "catalog:",
+    "vite": "catalog:",
     "vitest": "catalog:"
   }
 }

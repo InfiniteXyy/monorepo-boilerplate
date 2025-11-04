@@ -20,14 +20,14 @@ describe('startServer', () => {
   it('should create and start the server', () => {
     const consoleSpy = vi.spyOn(console, 'log');
 
-    startServer({ router: os.router({}), port: 3000, prefix: '/api' });
+    startServer({ router: os.router({}), listen: { port: 3000 }, prefix: '/api' });
 
     expect(createServer).toHaveBeenCalled();
     expect(consoleSpy).toHaveBeenCalledWith('Server is available at http://localhost:3000');
   });
 
   it('should handle 404 for non-matching routes', async () => {
-    startServer({ router: os.router({}), port: 3000, prefix: '/api' });
+    startServer({ router: os.router({}), listen: { port: 3000 }, prefix: '/api' });
     const handler = vi.mocked(createServer).mock.calls[0]![0] as (
       req: IncomingMessage,
       res: ServerResponse,
