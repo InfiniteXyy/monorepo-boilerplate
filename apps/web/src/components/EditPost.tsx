@@ -25,11 +25,7 @@ export function EditPost({ post, onCancel, onSuccess }: EditPostProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await mutateAsync({
-      id: post.id,
-      title,
-      description,
-    });
+    await mutateAsync({ id: post.id, title, description });
     onSuccess?.();
   };
 

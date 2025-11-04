@@ -1,8 +1,15 @@
-import type { Context, Router } from '@orpc/server';
+import type { AnyContractRouter } from '@orpc/contract';
+import type { Router } from '@orpc/server';
+import type { GlobalContext } from './procedures';
+
 import { createServer } from 'node:http';
 import { RPCHandler } from '@orpc/server/node';
 
-export function startServer(props: { router: Router<Context, any>; port: number; prefix: `/${string}` }) {
+export function startServer(props: {
+  router: Router<AnyContractRouter, GlobalContext>;
+  port: number;
+  prefix: `/${string}`;
+}) {
   const { router, port, prefix } = props;
   const rpcHandler = new RPCHandler(router);
 
@@ -12,7 +19,10 @@ export function startServer(props: { router: Router<Context, any>; port: number;
 
     // handle oRPC requests
     if (req.url?.startsWith(prefix)) {
-      const { matched } = await rpcHandler.handle(req, res, { prefix });
+      const { matched } = await rpcHandler.handle(req, res, {
+        prefix,
+        context: { headers: req.headers },
+      });
       if (matched) return;
       // eslint-disable-next-line no-console
       else console.log('No route matched for', req.url);

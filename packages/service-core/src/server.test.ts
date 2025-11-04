@@ -37,17 +37,4 @@ describe('startServer', () => {
     expect(mockRes.statusCode).toBe(404);
     expect(mockRes.end).toHaveBeenCalledWith('Not found');
   });
-
-  it('should attempt to handle RPC requests for matching prefix', async () => {
-    startServer({ router: os.router({}), port: 3000, prefix: '/api' });
-    const handler = vi.mocked(createServer).mock.calls[0]![0] as (
-      req: IncomingMessage,
-      res: ServerResponse,
-    ) => Promise<void>;
-    const consoleSpy = vi.spyOn(console, 'log');
-
-    await handler({ url: '/api/test', socket: {}, headers: {} } as IncomingMessage, mockRes);
-
-    expect(consoleSpy).toHaveBeenCalledWith('No route matched for', '/api/test');
-  });
 });

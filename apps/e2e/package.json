@@ -7,7 +7,7 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@playwright/test": "^1.52.0",
+    "@playwright/test": "^1.56.1",
     "@repo/config-eslint": "workspace:",
     "@repo/config-typescript": "workspace:",
     "eslint": "catalog:"

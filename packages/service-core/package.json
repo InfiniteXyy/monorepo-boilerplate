@@ -10,6 +10,8 @@
     "test": "vitest run --silent"
   },
   "dependencies": {
+    "@orpc/contract": "catalog:",
+    "@orpc/openapi": "catalog:",
     "@orpc/server": "catalog:",
     "@repo/shared-contracts": "workspace:"
   },

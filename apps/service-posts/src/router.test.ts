@@ -10,19 +10,21 @@ describe('postsRouter', () => {
 
   describe('listPosts', () => {
     it('should return all posts', async () => {
-      const result = await call(postsRouter.listPosts, {});
+      const result = await call(postsRouter.listPosts, {}, { context: { headers: {} } });
       expect(result).toEqual(database.posts.map(({ description, ...basicInfo }) => basicInfo));
     });
   });
 
   describe('getPost', () => {
     it('should return post by id', async () => {
-      const result = await call(postsRouter.getPost, { id: '0' });
+      const result = await call(postsRouter.getPost, { id: '0' }, { context: { headers: {} } });
       expect(result).toEqual(database.posts[0]);
     });
 
     it('should throw error when post not found', async () => {
-      await expect(call(postsRouter.getPost, { id: 'nonexistent' })).rejects.toThrow('Post not found');
+      await expect(call(postsRouter.getPost, { id: 'nonexistent' }, { context: { headers: {} } })).rejects.toThrow(
+        'Post not found',
+      );
     });
   });
 
@@ -33,14 +35,18 @@ describe('postsRouter', () => {
         description: 'new description',
       };
 
-      const result = await call(postsRouter.createPost, { ...newPost }, { context: { user: { id: '1' } } });
+      const result = await call(
+        postsRouter.createPost,
+        { ...newPost },
+        { context: { headers: {}, user: { id: '1' } } },
+      );
 
       expect(result.title).toBe(newPost.title);
       expect(result.description).toBe(newPost.description);
       expect(result.id).toBeDefined();
 
       // Verify post was added to database
-      const allPosts = await call(postsRouter.listPosts, {});
+      const allPosts = await call(postsRouter.listPosts, {}, { context: { headers: {} } });
       expect(allPosts).toHaveLength(2);
     });
   });
@@ -53,12 +59,12 @@ describe('postsRouter', () => {
         description: 'Updated description',
       };
 
-      const result = await call(postsRouter.updatePost, updatedData, { context: { user: { id: '1' } } });
+      const result = await call(postsRouter.updatePost, updatedData, { context: { headers: {}, user: { id: '1' } } });
 
       expect(result).toEqual(updatedData);
 
       // Verify post was updated in database
-      const updatedPost = await call(postsRouter.getPost, { id: '0' });
+      const updatedPost = await call(postsRouter.getPost, { id: '0' }, { context: { headers: {} } });
       expect(updatedPost.title).toBe(updatedData.title);
       expect(updatedPost.description).toBe(updatedData.description);
     });
@@ -70,9 +76,9 @@ describe('postsRouter', () => {
         description: 'Updated description',
       };
 
-      await expect(call(postsRouter.updatePost, updatedData, { context: { user: { id: '1' } } })).rejects.toThrow(
-        'Post not found',
-      );
+      await expect(
+        call(postsRouter.updatePost, updatedData, { context: { headers: {}, user: { id: '1' } } }),
+      ).rejects.toThrow('Post not found');
     });
   });
 });
