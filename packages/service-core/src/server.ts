@@ -4,7 +4,7 @@ import type { RequestListener } from 'node:http';
 
 import type { GlobalContext } from './procedures';
 import { createServer } from 'node:http';
-import { RPCHandler } from '@orpc/server/node';
+import { OpenAPIHandler } from '@orpc/openapi/node';
 
 export function startServer(props: {
   router: Router<AnyContractRouter, GlobalContext>;
@@ -12,7 +12,7 @@ export function startServer(props: {
   prefix: `/${string}`;
 }) {
   const { router, listen, prefix } = props;
-  const rpcHandler = new RPCHandler(router);
+  const rpcHandler = new OpenAPIHandler(router);
 
   const app: RequestListener = async (req, res) => {
     // add additional global middlewares here

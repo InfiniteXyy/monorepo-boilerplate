@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {
     proxy: {
-      '/rpc/posts': 'http://localhost:3000',
+      '/rpc': 'http://localhost:3000',
     },
   },
   test: {

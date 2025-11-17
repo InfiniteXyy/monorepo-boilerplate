@@ -1,11 +1,11 @@
 import type { ContractRouterClient } from '@orpc/contract';
-import type { contracts } from '@repo/shared-contracts';
+import type { JsonifiedClient } from '@orpc/openapi-client';
 import { createORPCClient } from '@orpc/client';
-import { RPCLink } from '@orpc/client/fetch';
+import { OpenAPILink } from '@orpc/openapi-client/fetch';
 import { createORPCReactQueryUtils } from '@orpc/react-query';
+import { contracts } from '@repo/shared-contracts';
 
-const rpcLink = new RPCLink({ url: `${location.origin}/rpc` });
+const openApiLink = new OpenAPILink(contracts, { url: () => `${new URL(window.location.href).origin}/rpc` });
 
-const orpcClient: ContractRouterClient<typeof contracts> = createORPCClient(rpcLink);
-
+export const orpcClient: JsonifiedClient<ContractRouterClient<typeof contracts>> = createORPCClient(openApiLink);
 export const orpc = createORPCReactQueryUtils(orpcClient);

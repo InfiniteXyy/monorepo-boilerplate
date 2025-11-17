@@ -11,6 +11,7 @@
   "dependencies": {
     "@orpc/client": "catalog:",
     "@orpc/contract": "catalog:",
+    "@orpc/openapi-client": "catalog:",
     "@orpc/react-query": "catalog:",
     "@repo/shared-contracts": "workspace:^",
     "@repo/ui-components": "workspace:^",
@@ -20,8 +21,8 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@repo/config-eslint": "workspace:",
     "@repo/config-build-tools": "workspace:",
+    "@repo/config-eslint": "workspace:",
     "@tailwindcss/vite": "catalog:",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
